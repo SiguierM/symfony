@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des acteurs{% endblock %}
+{% block pageTitle %}Liste des acteurs{% endblock %}
+
+{% block body %}
+<div class="nav" style="font-size: 1.2em">
+     <a href="{{ url('app_acteurs_create') }}"
+            class="border border-gray-700 rounded-md px-4 py-1">
+            Ajouter
+    </a>
+</div>
+<div class="nav2" style="font-size: 1.2em">
+     <a href="{{ url('app_films') }}"
+            class="border border-gray-700 rounded-md px-4 py-1">
+            Films
+    </a>
+</div>
+<div class="nav3" style="font-size: 1.2em">
+     <a href="{{ url('app_genre') }}"
+            class="border border-gray-700 rounded-md px-4 py-1">
+            Genre
+    </a>
+</div>
+
+<table width='100%'>
+    <thead>
+        <tr bgcolor='grey'>
+            <th>Nom</th>
+            <th>Prenom</th>
+            <th>Date de naissance</th>
+            <th>Date de mort</th>
+            <th>Photo</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for acteur in acteurs %}
+
+        <tr> 
+            <td> <a href="{{ url('acteur', {'id': acteur.id}) }}" >{{ acteur.nom }}</a></td>
+            <td>{{ acteur.prenom }}</td>
+            <td>{{ acteur.dateNaissance|date("d/m/Y")}}</td>
+            <td>
+            {% if acteur.dateDeces is not null %}
+            {{ acteur.dateDeces|date("d/m/Y") }}
+            {% endif %}
+            </td>
+            <td>
+            {% if acteur.photo is not null %}
+               <img src="{{asset('photos/'~acteur.photo)}}" style="width: 200px">
+            {% endif %}
+            </td>
+            <td>
+                <a href="{{ url('app_acteur_edit', {acteur: acteur.id}) }}">Modifier</a>
+                <a href="{{ path("app_acteur_delete",{id:acteur.id}) }}">Supprimer</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

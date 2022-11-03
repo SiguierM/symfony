@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajout d'un film{% endblock %}
+{% block pageTitle %}Ajout d'un film{% endblock %}
+
+{% block body %}
+<div class="grid grid-cols-2 gap-2">
+    <h1>Ajouter un film</h1>
+</div>
+{{form(form)}}
+<div class="nav" style="font-size: 1.2em">
+     <a href="{{ url('app_films') }}"
+            class="border border-gray-700 rounded-md px-4 py-1">
+            Retour
+    </a>
+</div>
+{% endblock %}

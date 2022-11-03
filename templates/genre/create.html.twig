@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Création d'un genre{% endblock %}
+{% block pageTitle %}Création d'un genre{% endblock %}
+
+{% block body %}
+
+<form action="" method="POST">
+    <div class="grid grid-cols-2 gap-2">
+        <h1>Créer un nouveau genre</h1>
+    </div>
+    <div class="container">
+    {{include ('genre/form.html.twig', {button : 'Créer'})}}
+    </div>
+</form>
+
+{% endblock %}

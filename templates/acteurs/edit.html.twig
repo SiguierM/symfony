@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Modification d'un acteur{% endblock %}
+{% block pageTitle %}Modification d'un acteur{% endblock %}
+
+{% block body %}
+<div class="grid grid-cols-2 gap-2">
+    <h1>Modifier un acteur</h1>
+</div>
+{{form(form)}}
+<div class="nav" style="font-size: 1.2em">
+     <a href="{{ url('app_acteurs') }}"
+            class="border border-gray-700 rounded-md px-4 py-1">
+            Retour
+    </a>
+</div>
+{% endblock %}

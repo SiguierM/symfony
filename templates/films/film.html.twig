@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Liste des films{% endblock %}
+{% block pageTitle %}Liste des films{% endblock %}
+
+{% block body %}
+<div class="nav" style="font-size: 1.2em">
+     <a href="{{ url('app_films') }}"
+            class="border border-gray-700 rounded-md px-4 py-1">
+            Tous les films
+    </a>
+</div>
+<div class="nav2" style="font-size: 1.2em">
+     <a href="{{ url('app_acteurs') }}"
+            class="border border-gray-700 rounded-md px-4 py-1">
+            Acteurs
+    </a>
+</div>
+<div class="nav3" style="font-size: 1.2em">
+     <a href="{{ url('app_genre') }}"
+            class="border border-gray-700 rounded-md px-4 py-1">
+            Genre
+    </a>
+</div>
+    
+<table width='100%'>
+    <thead>
+        <tr bgcolor='grey'>
+            <th>Id</th>
+            <th>Titre</th>
+            <th>Resume</th>
+            <th>Sortie</th>
+            <th>Affiche</th>
+            <th>Acteurs</th>
+            <th>Genre</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        <tr>
+            <td>{{ film.id }}</td>
+            <td>{{ film.titre }}</td>
+            
+            <td>{{ film.resume }}</td>
+            <td>{{ film.anneeSortie|date("d/m/Y")}}</td>
+            <td>
+            {% if film.affiche is not null %}
+               <img src="{{asset('affiches/'~film.affiche)}}" style="width: 100px">
+            {% endif %}
+            </td>
+            <td>
+             {% for acteur in film.acteurs %}
+                <td> <a href="{{ url('acteur', {'id': acteur.id}) }}" >{{ acteur.nom }}</a></td>
+            {%endfor%}
+            </td>
+            <td>
+              <a href="{{ url('liste', {'genreid': film.genre.id}) }}">{{film.genre.categorie}}</a>
+              </td>
+         
+        </tr>
+
+    </tbody>
+</table>
+
+{% endblock %}
