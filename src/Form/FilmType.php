@@ -8,7 +8,7 @@ use App\Entity\Genre;
 use PhpParser\Parser\Multiple;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;
 use Symfony\Component\Form\Extension\Core\Type\IntegerType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -23,7 +23,7 @@ class FilmType extends AbstractType
         $builder
             ->add('titre')
             ->add('resume')
-            ->add('annee_sortie',DateType::class,[
+            ->add('annee_sortie',BirthdayType::class,[
                 'label' => 'Jour de sortie'
             ])
             -> add('affiche', FileType::class, [

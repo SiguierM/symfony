@@ -3,6 +3,7 @@
 namespace App\Form;
 
 use App\Entity\Acteur;
+use App\Entity\Film;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
 use Symfony\Component\Form\Extension\Core\Type\FileType;

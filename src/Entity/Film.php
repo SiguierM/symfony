@@ -100,7 +100,7 @@ class Film
         return $this->affiche;
     }
 
-    public function setAffiche($affiche): self
+    public function setAffiche($affiche)
     {
         $this->affiche = $affiche;
 
