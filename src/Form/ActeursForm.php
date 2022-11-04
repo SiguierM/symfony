@@ -20,20 +20,20 @@ class ActeurType extends AbstractType {
         -> add ('prenom')
         -> add ('date_naissance', BirthdayType::class, [
             'placeholder' => [
-                'year' => 'Year', 'month' => 'Month', 'day' => 'Day',]
+                'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour',]
         ])
         -> add ('date_deces', BirthdayType::class, [
             'required'=>false,
             'placeholder' => [
-                'year' => 'Year', 'month' => 'Month', 'day' => 'Day',]
+                'year' => 'Année', 'month' => 'Mois', 'day' => 'Jour',]
         ])
         -> add('photo', FileType::class, [
-            'label' => 'Photo (PDF file)', 
+            'label' => 'Photo', 
             'data_class'=>null
         ]) 
         ->add('Enregistrer',SubmitType::class);
     }
-    
+
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver-> setDefaults([

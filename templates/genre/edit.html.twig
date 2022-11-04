@@ -2,16 +2,23 @@
 
 {% block title %}Modification d'un genre{% endblock %}
 {% block pageTitle %}Modification d'un genre{% endblock %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
 
 {% block body %}
 
-<form action="" method="POST">
-    <div class="grid grid-cols-2 gap-2">
-        <h1>Modifier un genre</h1>
-    </div>
-    <div class="container">
-    {{include ('genre/form.html.twig', {button : 'Modifier'})}}
-    </div>
-</form>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <span class="navbar-brand">Modifier un genre</span>
+  </div>
+</nav>
+<div class="container">
+    {{form(form)}}
 
+    <div class="nav" style="font-size: 1.2em">
+        <a href="{{ url('app_genre') }}"
+                class="btn btn-dark">
+                Retour
+        </a>
+    </div>
+</div>
 {% endblock %}

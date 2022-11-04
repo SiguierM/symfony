@@ -2,16 +2,22 @@
 
 {% block title %}Modification d'un film{% endblock %}
 {% block pageTitle %}Modification d'un film{% endblock %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
 
 {% block body %}
-<div class="grid grid-cols-2 gap-2">
-    <h1>Modifier un film</h1>
-</div>
-{{form(form)}}
-<div class="nav" style="font-size: 1.2em">
-     <a href="{{ url('app_films') }}"
-            class="border border-gray-700 rounded-md px-4 py-1">
-            Retour
-    </a>
+<nav class="navbar navbar-dark bg-dark">
+  <div class="container">
+    <span class="navbar-brand">Modifier un film</span>
+  </div>
+</nav>
+<div class="container">
+    {{form(form)}}
+
+    <div class="nav" style="font-size: 1.2em">
+        <a href="{{ url('app_films') }}"
+                class="btn btn-dark">
+                Retour
+        </a>
+    </div>
 </div>
 {% endblock %}
