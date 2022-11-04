@@ -4,31 +4,29 @@
 {% block pageTitle %}Liste des films{% endblock %}
 
 {% block body %}
-<div class="nav" style="font-size: 1.2em">
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container">
      <a href="{{ url('app_films') }}"
-            class="border border-gray-700 rounded-md px-4 py-1">
+            class="btn btn-dark btn-lg">
             Tous les films
     </a>
-</div>
-<div class="nav2" style="font-size: 1.2em">
      <a href="{{ url('app_acteurs') }}"
-            class="border border-gray-700 rounded-md px-4 py-1">
+            class="btn btn-dark btn-lg">
             Acteurs
     </a>
-</div>
-<div class="nav3" style="font-size: 1.2em">
      <a href="{{ url('app_genre') }}"
-            class="border border-gray-700 rounded-md px-4 py-1">
+            class="btn btn-dark btn-lg">
             Genre
     </a>
-</div>
+    </div>
+</nav>
     
-<table width='100%'>
+<table class="table table-hover">
     <thead>
-        <tr bgcolor='grey'>
+        <tr bgcolor='#787878'>
             <th>Id</th>
             <th>Titre</th>
-            <th>Resume</th>
+            <th>Résumé</th>
             <th>Sortie</th>
             <th>Affiche</th>
             <th>Acteurs</th>
@@ -49,7 +47,7 @@
             </td>
             <td>
              {% for acteur in film.acteurs %}
-                <td> <a href="{{ url('acteur', {'id': acteur.id}) }}" >{{ acteur.nom }}</a></td>
+                <a href="{{ url('acteur', {'id': acteur.id}) }}" >{{ acteur.nom }}</a>
             {%endfor%}
             </td>
             <td>

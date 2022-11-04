@@ -4,29 +4,28 @@
 {% block pageTitle %}Liste des genres{% endblock %}
 
 {% block body %}
-<div class="nav" style="font-size: 1.2em">
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container">
      <a href="{{ url('app_genre_create') }}"
-            class="border border-gray-700 rounded-md px-4 py-1">
+            class="btn btn-outline-light">
             Créer
     </a>
-</div>
-<div class="nav2" style="font-size: 1.2em">
      <a href="{{ url('app_acteurs') }}"
-            class="border border-gray-700 rounded-md px-4 py-1">
+            class="btn btn-dark btn-lg">
             Acteurs
     </a>
-</div>
-<div class="nav3" style="font-size: 1.2em">
      <a href="{{ url('app_films') }}"
-            class="border border-gray-700 rounded-md px-4 py-1">
+            class="btn btn-dark btn-lg">
             Films
     </a>
-</div>
-    
-<table class="table table-bordered table-condensed">
+    </div>
+</nav>
+
+<table class="table table-hover">
     <thead>
-        <tr bgcolor='grey'>
-            <th>Categorie</th>
+        <tr bgcolor='#787878'>
+            <th>Catégorie</th>
+            <th>Paramètres</th>
         </tr>
     </thead>
 

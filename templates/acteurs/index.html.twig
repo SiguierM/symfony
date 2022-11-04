@@ -4,33 +4,32 @@
 {% block pageTitle %}Liste des acteurs{% endblock %}
 
 {% block body %}
-<div class="nav" style="font-size: 1.2em">
+<nav class="navbar navbar-expand-lg bg-dark">
+    <div class="container">
      <a href="{{ url('app_acteurs_create') }}"
-            class="border border-gray-700 rounded-md px-4 py-1">
+            class="btn btn-outline-light">
             Ajouter
     </a>
-</div>
-<div class="nav2" style="font-size: 1.2em">
      <a href="{{ url('app_films') }}"
-            class="border border-gray-700 rounded-md px-4 py-1">
+            class="btn btn-dark btn-lg">
             Films
     </a>
-</div>
-<div class="nav3" style="font-size: 1.2em">
      <a href="{{ url('app_genre') }}"
-            class="border border-gray-700 rounded-md px-4 py-1">
+            class="btn btn-dark btn-lg">
             Genre
     </a>
-</div>
+    </div>
+</nav>
 
-<table width='100%'>
+<table class="table table-hover">
     <thead>
-        <tr bgcolor='grey'>
+        <tr bgcolor='#787878'>
             <th>Nom</th>
-            <th>Prenom</th>
+            <th>Prénom</th>
             <th>Date de naissance</th>
             <th>Date de mort</th>
             <th>Photo</th>
+            <th>Paramètres</th>
         </tr>
     </thead>
     <tbody>
