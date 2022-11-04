@@ -27,7 +27,6 @@
             <th>Titre</th>
             <th>Sortie</th>
             <th>Affiche</th>
-            <th>Paramètres</th>
         </tr>
     </thead>
     <tbody>
@@ -39,10 +38,6 @@
             {% if film.affiche is not null %}
                <img src="{{asset('affiches/'~film.affiche)}}" style="width: 100px">
             {% endif %}
-            </td>
-            <td>
-                <a href="{{ url('app_films_edit', {film: film.id}) }}">Modifier</a>
-                <a href="{{ url('app_films_delete', {id: film.id}) }}">Supprimer</a>
             </td>
         </tr>
         {% endfor %}
