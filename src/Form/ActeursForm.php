@@ -30,10 +30,10 @@ class ActeurType extends AbstractType {
         -> add('photo', FileType::class, [
             'label' => 'Photo (PDF file)', 
             'data_class'=>null
-        ])
+        ]) 
         ->add('Enregistrer',SubmitType::class);
-
     }
+    
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver-> setDefaults([

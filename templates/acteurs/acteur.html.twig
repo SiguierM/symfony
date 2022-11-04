@@ -30,6 +30,7 @@
             <th>Date de naissance</th>
             <th>Date de mort</th>
             <th>Photo</th>
+            <th>Films</th>
             <th>Paramètres</th>
         </tr>
     </thead>
@@ -49,6 +50,11 @@
             {% if acteur.photo is not null %}
                <img src="{{asset('photos/'~acteur.photo)}}" style="width: 200px">
             {% endif %}
+            </td>
+              <td>
+             {% for film in acteur.films %}
+                <a href="{{ url('film', {'id': film.id}) }}" >{{ film.titre }}</a>
+            {%endfor%}
             </td>
             <td>
                 <a href="{{ url('app_acteur_edit', {acteur: acteur.id}) }}">Modifier</a>
